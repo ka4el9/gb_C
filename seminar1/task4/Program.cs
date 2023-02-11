@@ -20,16 +20,16 @@ Console.Write("Введите третье число: ");
 string third = Console.ReadLine();
 int number3 = Convert.ToInt32(third);
 
-if (number1 > number2 | number1 > number3) {
+if (number1 > number2 & number1 > number3) {
     Console.Write("max number - ");
     Console.WriteLine(number1);
 }
 
-if (number2 > number2 | number2 > number3) {
+if (number2 > number1 & number2 > number3) {
     Console.Write("max number - ");
     Console.WriteLine(number2);
 }
-if (number3 > number1 | number3 > number2) {
+if (number3 > number1 & number3 > number2) {
     Console.Write("max number - ");
     Console.WriteLine(number3);
 }
