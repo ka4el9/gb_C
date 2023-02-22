@@ -29,8 +29,5 @@ void ArrayFunction (int NUM) {
     Console.WriteLine("]");
 }
 
-Console.Write("Введите длину массива: ");
-string Length = Console.ReadLine();
-int UserLenght = Convert.ToInt32(Length);
-ArrayFunction(UserLenght);
+ArrayFunction(ReadNumber("Введите длину массива: "));
 
