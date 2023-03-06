@@ -40,20 +40,20 @@ void PrintMatrix (int [,] matrix) {
     }
 }
 
-void SearchAMcolumns (int [,] matrix, int col) {
+void SearchAMcolumns (int [,] matrix, int col, int row) {
     double [] array = new double [col];
-    double sum = 0;
-    int index = 0;
 
-    for (int i = 0; i < matrix.GetLength(0); i++)
-    {        
-        for (int j = 0; j < matrix.GetLength(1); j++)
+    double am = 0;
+    for (int j = 0; j < matrix.GetLength(1); j++)
+    {   
+        array[j] = 0;
+
+        for (int i = 0; i < matrix.GetLength(0); i++)
         {
-            sum += matrix[j, i];
-        }
-        array[index] = sum/col;
-        index++;
-        sum = 0;           
+            array[j] += matrix[i, j];
+            
+        } 
+        array[j] /= row;
     }
     
     Console.Write("[");
@@ -69,4 +69,4 @@ int m = ReadNumber("Введите количество строк матриц�
 int n = ReadNumber("Введите количество столбцов матрицы = ");
 int [,] myMatrix = GetRandomMatrix(m, n);
 PrintMatrix(myMatrix);
-SearchAMcolumns(myMatrix, n);
+SearchAMcolumns(myMatrix, n, m);
